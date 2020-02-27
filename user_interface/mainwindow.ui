@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>968</width>
+    <height>687</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Image Processor</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow{
+    background-color: #f2f2ea;
+}
+
+QWidget{
+   background-color: #f2f2ea;
+   border-radius:5px; 
+}
+QPushButton{
+font: 20pt &quot;Optima LT DemiBold&quot;; /*设置字体*/
+color:#574505;/*设置字体颜色*/
+background-color:#e0d3a1;/*设置背景颜色*/
+border-width: 1px;/*设置边框宽度*/
+border-color:#755d07;/*设置边框颜色*/
+border-style:solid;/*设置边框样式*/
+margin-left:20px;/*设置左侧间隔*/
+margin-right:20px;/*设置右侧间隔*/
+}
+QPushButton:hover{/*鼠标滑过按钮后的样式*/
+font: 20pt &quot;Optima LT DemiBold&quot;;
+color:#e0d3a1;
+background-color:#997a05;
+border-width: 1px;
+border-color: #755d07;
+border-style:solid;
+margin-left:20px;
+margin-right:20px;
+}
+QLineEdit{
+background-color:#e0d3a1;
+height:18px;
+font:15px &quot;Calisto MT&quot;;
+padding:2px;
+
+}
+QLabel{
+font: 15pt &quot;Optima LT DemiBold&quot;;
+color:#574505;
+}
+ QMenu::item {
+ background-color: #f2f2ea;
+ color:#755d07;
+ font: 10pt &quot;Calisto MT&quot;;
+ padding:5px 20px;
+ border-bottom:1px solid #DBDBDB;/*为菜单项之间添加横线间隔*/
+ }
+QMenu::item:selected{/*设定菜单项选择时的样式*/
+color:#f2f2ea;
+background-color:#755d07;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>961</width>
+      <height>631</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>7</number>
+     </property>
+     <property name="sizeConstraint">
+      <enum>QLayout::SetDefaultConstraint</enum>
+     </property>
+     <item>
+      <widget class="QGraphicsView" name="graphicsView">
+       <property name="styleSheet">
+        <string notr="true">margin-top:5px;
+margin-right:18px;
+margin-left:18px;
+margin-bottom:5px;
+background-color:#454545;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QGridLayout" name="gridLayout">
+       <property name="horizontalSpacing">
+        <number>2</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QPushButton" name="button_open">
+         <property name="text">
+          <string>OPEN</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="4">
+        <widget class="QPushButton" name="button_reset">
+         <property name="text">
+          <string>RESET</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="button_pre">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>&lt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QPushButton" name="button_next">
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QPushButton" name="button_save">
+         <property name="text">
+          <string>SAVE</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>968</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>选项</string>
+    </property>
+    <addaction name="actionrgb2grey"/>
+    <addaction name="actionreverse"/>
+    <addaction name="actionlog_transform"/>
+    <addaction name="actionhistgram_equstlison"/>
+    <addaction name="actioncolor_hist1"/>
+    <addaction name="actioncolor_hist2"/>
+    <addaction name="actionliner"/>
+    <addaction name="actiongaussblur"/>
+    <addaction name="actionbilfilter"/>
+    <addaction name="actionmedianfilter"/>
+    <addaction name="actionexpansion"/>
+    <addaction name="actionetching"/>
+    <addaction name="actionfft"/>
+    <addaction name="actiontransform"/>
+    <addaction name="actionidf"/>
+    <addaction name="actionhdf"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionrgb2grey">
+   <property name="text">
+    <string>rgb2gray</string>
+   </property>
+  </action>
+  <action name="actionreverse">
+   <property name="text">
+    <string>reverse</string>
+   </property>
+  </action>
+  <action name="actionlog_transform">
+   <property name="text">
+    <string>log transform</string>
+   </property>
+  </action>
+  <action name="actionhistgram_equstlison">
+   <property name="text">
+    <string>histgram equalizaion</string>
+   </property>
+  </action>
+  <action name="actioncolor_hist1">
+   <property name="text">
+    <string>color hist1</string>
+   </property>
+  </action>
+  <action name="actioncolor_hist2">
+   <property name="text">
+    <string>color hist2</string>
+   </property>
+  </action>
+  <action name="actionliner">
+   <property name="text">
+    <string>liner</string>
+   </property>
+  </action>
+  <action name="actiongaussblur">
+   <property name="text">
+    <string>gaussblur</string>
+   </property>
+  </action>
+  <action name="actionbilfilter">
+   <property name="text">
+    <string>bilfilter</string>
+   </property>
+  </action>
+  <action name="actionmedianfilter">
+   <property name="text">
+    <string>medianfilter</string>
+   </property>
+  </action>
+  <action name="actionexpansion">
+   <property name="text">
+    <string>expansion</string>
+   </property>
+  </action>
+  <action name="actionetching">
+   <property name="text">
+    <string>etching</string>
+   </property>
+  </action>
+  <action name="actionfft">
+   <property name="text">
+    <string>fft</string>
+   </property>
+  </action>
+  <action name="actiontransform">
+   <property name="text">
+    <string>transform</string>
+   </property>
+  </action>
+  <action name="actionidf">
+   <property name="text">
+    <string>ideal lowpass pattern</string>
+   </property>
+  </action>
+  <action name="actionhdf">
+   <property name="text">
+    <string>ideal highpass pattern</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
